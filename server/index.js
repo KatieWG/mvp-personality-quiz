@@ -9,14 +9,15 @@ mongoose.connect('mongodb://localhost:27017/mvp');
 const { findPersonalityType } = require('../database/controller.js')
 
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, '..', 'client/dist')));
 app.use(express.json());
 
 // this route should invoke query on controller file
-app.get('/personality', (req, res) => {
-  findPersonalityType(req.query)
-  .then(data => {
-    console.log('ANIME GOTTEN')
-    res.status(200).send(data)
+app.get('/personality/:theme', (req, res) => {
+  findPersonalityType(req.params.theme)
+  .then(anime => {
+    console.log('ANIME GOTTEN WITH THE THEME', req.params.theme)
+    res.status(200).send(anime)
   })
   .catch(err => {
     console.log('ERR GETTING PERSONALITY', err)
