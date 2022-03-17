@@ -8,13 +8,13 @@ module.exports = {
   },
   module: {
     rules: [{
-      test:/\.(js|jsx)$/,
+      test:/\.(js|jsx|woff|woff2)$/,
       exclude: /node_modules/,
       use: 'babel-loader'
     }]
   },
   mode: 'development',
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.woff', '.woff2']
   }
 }
