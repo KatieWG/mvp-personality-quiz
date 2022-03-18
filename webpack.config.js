@@ -8,13 +8,18 @@ module.exports = {
   },
   module: {
     rules: [{
-      test:/\.(js|jsx|woff|woff2)$/,
+      test:/\.(js|jsx|css|woff|woff2)$/, //I think I lack understanding of this line
       exclude: /node_modules/,
       use: 'babel-loader'
-    }]
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      }
+    ]
   },
   mode: 'development',
   resolve: {
-    extensions: ['.js', '.jsx', '.woff', '.woff2']
+    extensions: ['.js', '.jsx', '.woff', '.woff2', '.css']
   }
 }

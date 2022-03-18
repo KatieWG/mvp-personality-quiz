@@ -8,7 +8,7 @@ const ContainerDiv = styled.div`
   width: 500px;
   margin: auto;
   font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: .9em;
+  font-size: 1em;
   letter-spacing: -.8px;
   word-spacing: 4.6px;
   font-weight: 300;
@@ -54,7 +54,7 @@ const RestartButton = styled.button`
     border-color: #0077ed;
   }
 `;
-//make a large text style for the anime title
+
 const Result = ({ anime, theme, changeStatus }) => {
 console.log("anime: ", anime)
 
@@ -63,11 +63,10 @@ console.log("anime: ", anime)
   } else {
     return (
         <ContainerDiv>
-          {/* <GlobalFonts /> */}
           <h2>Results</h2>
             <StyledDiv>
               <h3>Your starter anime is: </h3>
-                <p>{anime.name}</p>
+                <h2>{anime.name}</h2>
               <h4>Description: </h4>
                 <p>{anime.description}</p>
               <h4>Personality analysis: </h4>

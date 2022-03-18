@@ -25,6 +25,11 @@ const questionData = [
     question: 'What do you dislike the most?',
     answers: ['Pessimism', 'Boredom', 'Taking yourself too seriously', 'Dishonesty', 'Rainy days']
   },
+  {
+    number: 5,
+    question: 'How do you want to see yourself in 5 years?',
+    answers: ['Partnered up and in love', 'Learning how to free climb', 'Literally the exact same', 'Surrounded by true friends', 'Living somewhere far far away']
+  }
 ];
 
 module.exports = { questionData }

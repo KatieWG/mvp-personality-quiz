@@ -10,7 +10,7 @@ const OverallDiv = styled.div`
   margin: auto;
   margin-top: 60px;
   font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 1em;
+  font-size: 1.4em;
   letter-spacing: -.8px;
   word-spacing: 4.6px;
   font-weight: 300;
@@ -33,7 +33,7 @@ const NextButton = styled.button`
   padding: 5px;
   border-radius: 5px;
   font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 1em;
+  font-size: 1.5em;
   letter-spacing: -.8px;
   word-spacing: 4.6px;
   font-weight: 300;
@@ -51,10 +51,6 @@ const NextButton = styled.button`
 
 const Start = ({ changeStatus }) => {
   const [theme, setTheme] = useState('friendship')
-
-  useEffect(() => {
-  }, []);
-
 
   return (
     <div>

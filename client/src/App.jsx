@@ -6,13 +6,13 @@ import Question from './Question.jsx';
 import Result from './Result.jsx'
 import styled from "styled-components"
 // import GlobalFonts from './fonts/fonts';
+// import { Dots } from 'loading-animations-react';
 
 const OverallDiv = styled.div`
   color: #3a3b3c;
   text-align: center;
   margin: auto;
   width: 500px;
-
   font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: 1em;
   letter-spacing: -.8px;
@@ -27,7 +27,7 @@ const OverallDiv = styled.div`
 const App = () => {
   const [theme, setTheme] = useState();
   const [anime, setAnime] = useState(null);
-  const [status, setStatus] = useState('start'); //default start
+  const [status, setStatus] = useState('start'); ///////
   const scoreSheet = [
   {
     value: 'love',
@@ -95,7 +95,7 @@ const App = () => {
     <OverallDiv>
       {status === 'start' ? <Start changeStatus={changeStatus}/> :
       status === 'question' ? <Question anime={anime} theme={theme} scoreSheet={scoreSheet} findHighestScore={findHighestScore}/> :
-      status === 'result' ? (anime ? <Result anime={anime[0]} theme={theme} changeStatus={changeStatus}/> : null) : null}
+      status === 'result' ? (anime && theme ? <Result anime={anime[0]} theme={theme} changeStatus={changeStatus}/> : null) : null}
       <br/>
       <p></p>
     </OverallDiv>

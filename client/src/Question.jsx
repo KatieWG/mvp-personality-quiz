@@ -6,6 +6,7 @@ const StyledDiv = styled.div`
   background-color: #f5f5f5;
   outline: 2px solid #3a3b3c;
   padding: 25px;
+  font-size: 1.3em;
   border-radius: 30px;
   margin-top: 50px;
   box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0);
@@ -22,9 +23,9 @@ const ChoiceButton1 = styled.button`
   width: 75%;
   padding: 5px;
   margin-bottom: 4px;
+  font-size: .9em;
   border-radius: 5px;
   font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 1em;
   letter-spacing: -.8px;
   word-spacing: 4.6px;
   font-weight: 300;
@@ -44,10 +45,10 @@ const ChoiceButton2 = styled.button`
   outline: 1px solid #3a3b3c;
   width: 75%;
   padding: 5px;
+  font-size: .9em;
   margin-bottom: 4px;
   border-radius: 5px;
   font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 1em;
   letter-spacing: -.8px;
   word-spacing: 4.6px;
   font-weight: 300;
@@ -66,11 +67,11 @@ const ChoiceButton3 = styled.button`
   background-color: #f5f5f5;
   outline: 1px solid #3a3b3c;
   width: 75%;
+  font-size: .9em;
   padding: 5px;
   margin-bottom: 4px;
   border-radius: 5px;
   font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 1em;
   letter-spacing: -.8px;
   word-spacing: 4.6px;
   font-weight: 300;
@@ -92,8 +93,8 @@ const ChoiceButton4 = styled.button`
   padding: 5px;
   margin-bottom: 4px;
   border-radius: 5px;
+  font-size: .9em;
   font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 1em;
   letter-spacing: -.8px;
   word-spacing: 4.6px;
   font-weight: 300;
@@ -115,8 +116,8 @@ const ChoiceButton5 = styled.button`
   padding: 5px;
   margin-bottom: 4px;
   border-radius: 5px;
+  font-size: .9em;
   font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 1em;
   letter-spacing: -.8px;
   word-spacing: 4.6px;
   font-weight: 300;
@@ -136,9 +137,9 @@ const NextButton = styled.button`
   outline: 1px solid #3a3b3c;
   width: 40%;
   padding: 5px;
+  font-size: 1em;
   border-radius: 5px;
   font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 1em;
   letter-spacing: -.8px;
   word-spacing: 4.6px;
   font-weight: 300;
@@ -155,13 +156,13 @@ const NextButton = styled.button`
 `;
 
 const Question = ({ changeStatus, scoreSheet, findHighestScore }) => {
-  const [theme, setTheme] = useState('friendship')
+  const [theme, setTheme] = useState('')
   const [questionNumber, setQuestionNumber] = useState(0)
   const [currentQuestion, setCurrentQuestion] = useState(questionData[questionNumber])
 
   const changeQuestion = (number) => {
     console.log('number', number)
-    if (number < 4) {
+    if (number < 6) {
       setQuestionNumber(number + 1);
       setCurrentQuestion(questionData[questionNumber])
     }
@@ -174,7 +175,7 @@ const Question = ({ changeStatus, scoreSheet, findHighestScore }) => {
 
   return (
     <div>
-      <h2>Question {currentQuestion.number + 1} / 5</h2>
+      <h2>Question {currentQuestion.number + 1} / 6</h2>
     <StyledDiv>
       <h4>{currentQuestion.number + 1}. {currentQuestion.question}</h4>
       <ChoiceButton1 onClick={() => updateScore(scoreSheet[0].score, 0)}>{currentQuestion.answers[0]}</ChoiceButton1>
@@ -188,7 +189,7 @@ const Question = ({ changeStatus, scoreSheet, findHighestScore }) => {
       <ChoiceButton5 onClick={() => updateScore(scoreSheet[4].score, 4)}>{currentQuestion.answers[4]}</ChoiceButton5>
       <br />
       <br />
-      { questionNumber === 4 ?
+      { questionNumber === 6 ?
       <NextButton onClick={findHighestScore}>End quiz and see result</NextButton> :
       <NextButton onClick={() => changeQuestion(questionNumber)}>Next question</NextButton>
       }
