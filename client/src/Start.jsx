@@ -26,6 +26,7 @@ const OverallDiv = styled.div`
     background: #FFFFFF
   }
 `;
+
 const NextButton = styled.button`
   background-color: #f5f5f5;
   outline: 1px solid #3a3b3c;
@@ -53,7 +54,7 @@ const Start = ({ changeStatus }) => {
   const [theme, setTheme] = useState('friendship')
 
   return (
-    <div>
+    <OverallDiv>
       <h2>Anime Personality Test</h2>
         <OverallDiv>
           <h4>How well do you know yourself? <br/><br/>Let our AI tell you the perfect starter anime for your personality...</h4>
