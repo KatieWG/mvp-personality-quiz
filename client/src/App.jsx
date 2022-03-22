@@ -5,8 +5,6 @@ import Start from './Start.jsx'
 import Question from './Question.jsx';
 import Result from './Result.jsx'
 import styled from "styled-components"
-// import GlobalFonts from './fonts/fonts';
-// import { Dots } from 'loading-animations-react';
 
 const OverallDiv = styled.div`
   color: #3a3b3c;
