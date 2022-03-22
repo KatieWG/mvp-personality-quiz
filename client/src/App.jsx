@@ -5,6 +5,9 @@ import Start from './Start.jsx'
 import Question from './Question.jsx';
 import Result from './Result.jsx'
 import styled from 'styled-components';
+//import styled components here
+
+//declare and write a styled component here
 
 const App = () => {
   const [theme, setTheme] = useState();
@@ -73,6 +76,8 @@ const App = () => {
     console.log('This is your highest scoring theme!! --->' , topTheme)
   }
 
+
+  //insert styled component tag here
   return (
     <div>
       {status === 'start' ? <Start changeStatus={changeStatus}/> :
