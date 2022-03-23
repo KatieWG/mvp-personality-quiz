@@ -5,9 +5,6 @@ import Start from './Start.jsx'
 import Question from './Question.jsx';
 import Result from './Result.jsx'
 import styled from 'styled-components';
-//import styled components here
-
-//declare and write a styled component here
 
 const App = () => {
   const [theme, setTheme] = useState();
