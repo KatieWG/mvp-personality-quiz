@@ -155,7 +155,7 @@ const NextButton = styled.button`
   }
 `;
 
-const Question = ({ changeStatus, scoreSheet, findHighestScore }) => {
+const Question = ({ scoreSheet, findHighestScore }) => {
   const [theme, setTheme] = useState('')
   const [questionNumber, setQuestionNumber] = useState(0)
   const [currentQuestion, setCurrentQuestion] = useState(questionData[questionNumber])

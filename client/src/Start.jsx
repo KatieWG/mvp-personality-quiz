@@ -50,17 +50,15 @@ const NextButton = styled.button`
   }
 `;
 
-const Start = ({ changeStatus }) => {
+const Start = ( { changeStatus } ) => {
   const [theme, setTheme] = useState('friendship')
 
   return (
     <OverallDiv>
       <h2>Anime Personality Test</h2>
-        <OverallDiv>
           <h4>How well do you know yourself? <br/><br/>Let our AI tell you the perfect starter anime for your personality...</h4>
           <NextButton onClick={changeStatus}>Start</NextButton>
-        </OverallDiv>
-    </div>
+    </OverallDiv>
   )
 
 }

@@ -26,6 +26,24 @@ const App = () => {
   const [theme, setTheme] = useState();
   const [anime, setAnime] = useState(null);
   const [status, setStatus] = useState('start'); ///////
+
+  // constructor (props) {
+  //   super(props);
+  //     const state = {
+  //       theme: null,
+  //       anime: null,
+  //       status: 'f1', //start at f1, change on button click
+
+  //       // f1: false,
+  //       // f2: true,
+  //       // f3: false
+  //     }
+  //     this.changeStatus = this.changeStatus.bind(this);
+  // }
+
+  //presentation edits
+  const [isTrue, setIsTrue] = useState(false);
+
   const scoreSheet = [
   {
     value: 'love',
@@ -91,6 +109,7 @@ const App = () => {
 
   return (
     <OverallDiv>
+      {/* {isTrue ? <div> variable is truthy </div> : <div> variable is falsy </div>} */}
       {status === 'start' ? <Start changeStatus={changeStatus}/> :
       status === 'question' ? <Question anime={anime} theme={theme} scoreSheet={scoreSheet} findHighestScore={findHighestScore}/> :
       status === 'result' ? (anime && theme ? <Result anime={anime[0]} theme={theme} changeStatus={changeStatus}/> : null) : null}
@@ -101,4 +120,4 @@ const App = () => {
 
 }
 
-export de>fault App;
+export default App;

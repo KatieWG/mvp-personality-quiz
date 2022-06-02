@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const axios = require('axios');
 const path = require('path');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/mvp');
 const { findPersonalityType } = require('../database/controller.js')
