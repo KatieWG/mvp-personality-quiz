@@ -4,12 +4,34 @@ import axios from 'axios';
 import Start from './Start.jsx'
 import Question from './Question.jsx';
 import Result from './Result.jsx'
+<<<<<<< HEAD
 import styled from 'styled-components';
+=======
+import styled from "styled-components"
+// import GlobalFonts from './fonts/fonts';
+
+const OverallDiv = styled.div`
+  color: #3a3b3c;
+  text-align: center;
+  margin: auto;
+  width: 500px;
+
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 1em;
+  letter-spacing: -.8px;
+  word-spacing: 4.6px;
+  font-weight: 300;
+  text-decoration: none solid rgb(68, 68, 68);
+  font-style: italic;
+  font-variant: normal;
+  text-transform: uppercase;
+`;
+>>>>>>> parent of 39357ed (style changes)
 
 const App = () => {
   const [theme, setTheme] = useState();
   const [anime, setAnime] = useState(null);
-  const [status, setStatus] = useState('start'); ///////
+  const [status, setStatus] = useState('start'); //default start
   const scoreSheet = [
   {
     value: 'love',
@@ -79,7 +101,7 @@ const App = () => {
     <div>
       {status === 'start' ? <Start changeStatus={changeStatus}/> :
       status === 'question' ? <Question anime={anime} theme={theme} scoreSheet={scoreSheet} findHighestScore={findHighestScore}/> :
-      status === 'result' ? (anime && theme ? <Result anime={anime[0]} theme={theme} changeStatus={changeStatus}/> : null) : null}
+      status === 'result' ? (anime ? <Result anime={anime[0]} theme={theme} changeStatus={changeStatus}/> : null) : null}
       <br/>
       <p></p>
     </div>
